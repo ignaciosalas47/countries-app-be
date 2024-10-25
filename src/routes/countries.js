@@ -1,6 +1,10 @@
-const express = require('express');
+import express from 'express';
+import {
+  getAvailableCountries,
+  getCountryInfo,
+} from '../controllers/countryController.js';
+
 const router = express.Router();
-const { getAvailableCountries, getCountryInfo } = require('../controllers/countryController');
 
 // GET /api/countries
 router.get('/', getAvailableCountries);
@@ -8,4 +12,4 @@ router.get('/', getAvailableCountries);
 // GET /api/countries/:code
 router.get('/:code', getCountryInfo);
 
-module.exports = router;
+export default router;
